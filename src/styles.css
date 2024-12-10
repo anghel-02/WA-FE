@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://code.highcharts.com/css/highcharts.css");
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Dark mode */
+
+body.dark-mode {
+    background-color: black;
+}
+
+body.dark-mode .mat-drawer-container{
+    background-color: black;
+}
+
+body.dark-mode .drawer{
+    background-color: rgb(48, 46, 46);
+}
+
+body.dark-mode .page_item.active,
+body.dark-mode .page_item:hover{
+    background-color: rgb(77, 61, 87);
+}
+
+body.dark-mode #model_page p{
+    color: white;
+}
+
+body.dark-mode .highcharts-background{
+    fill:black;
+}
+
+body.dark-mode .model{
+    color:white;
+}
+
+body.dark-mode #homepage p{
+    color: white;
+}
+
+body.dark-mode .vl{
+    border-left: 1px solid rgb(252, 255, 252);
+}
+
+body.dark-mode #desc_page p{
+    color: white;
+}
+
+body.dark-mode .btn {
+    background-color:rgb(48, 46, 46);
+    --mdc-protected-button-label-text-color: white;
+
+}
+
+body.dark-mode #desc_page  .mdc-text-field__input{
+    color:white;
+}
+
+body.dark-mode #desc_page .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: rgb(48, 46, 46);
+}
+
+body.dark-mode #desc_page .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: #3eb6b4;
+}
+
+
+/* Light mode*/
+
+body {
+    background-color: white;
+}
+
+.mat-drawer-container {
+    background-color: white;
+}
+
+.drawer{
+    background-color: rgba(240, 240, 240, 0.986);
+}
+
+.page_item.active,
+.page_item:hover{
+    background-color: #d6cfff;
+}
+
+#model_page p{
+    color: black;
+}
+
+#homepage p{
+    color: black;
+}
+
+

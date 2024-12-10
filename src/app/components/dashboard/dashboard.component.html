@@ -1,0 +1,61 @@
+<mat-drawer-container class="example-container" [ngClass]="{'dark-theme': isDarkMode}">
+    <mat-drawer mode="side" opened class="drawer">
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <div class="contenitore">
+                <mat-icon class="admin">admin_panel_settings</mat-icon> &nbsp; <a class="admin"><b>ADMIN</b></a>
+                </div>
+            </mat-list-item>
+
+            <hr>
+
+            <mat-list-item role="listitem"  class="page_item" [routerLink]="['/home']" routerLinkActive="active"  (click)="toggleSelection('item1')" [class.selected]="selectedItem === 'item1'">
+                <div class="contenitore">
+            <mat-icon class="page_icon">home</mat-icon> &nbsp; <a class="page_name">Dashboard</a>
+            </div>
+            </mat-list-item>
+
+            <mat-list-item role="listitem" class="page_item" [routerLink]="['/dataset']" routerLinkActive="active" (click)="toggleSelection('item2')" [class.selected]="selectedItem === 'item2'">
+                <div class="contenitore">
+                    <mat-icon class="page_icon">table_chart</mat-icon> &nbsp; <a class="page_name">Dataset</a>
+                </div>
+                </mat-list-item>
+
+            <mat-list-item role="listitem" class="page_item" [routerLink]="['/model']" routerLinkActive="active" (click)="toggleSelection('item3')" [class.selected]="selectedItem === 'item3'">
+                <div class="contenitore">
+                <mat-icon class="page_icon" >memory</mat-icon> &nbsp; <a class="page_name" >Model</a>
+            </div>
+            </mat-list-item>
+
+            <mat-list-item role="listitem" class="page_item" [routerLink]="['/anamodel']" routerLinkActive="active" (click)="toggleSelection('item4')" [class.selected]="selectedItem === 'item4'">
+                <div class="contenitore">
+                <mat-icon class="page_icon" >insert_chart</mat-icon> &nbsp; <a class="page_name" >Model Analytics</a>
+            </div>
+            </mat-list-item>
+
+            <mat-list-item role="listitem" class="page_item" [routerLink]="['/description']" routerLinkActive="active" (click)="toggleSelection('item5')" [class.selected]="selectedItem === 'item5'">
+                <div class="contenitore">
+                <mat-icon class="page_icon" >description</mat-icon> &nbsp; <a class="page_name" >Modify Description</a>
+            </div>
+            </mat-list-item>
+
+            <mat-list-item role="listitem" class="page_item" [routerLink]="['/prediction']" routerLinkActive="active" (click)="toggleSelection('item6')" [class.selected]="selectedItem === 'item6'">
+                <div class="contenitore">
+                <mat-icon class="page_icon" >visibility</mat-icon> &nbsp; <a class="page_name" >Prediction Menagement</a>
+            </div>
+            </mat-list-item>
+            &nbsp;
+            <mat-list-item>
+                <div class="contenitore">
+                <mat-icon class="style">settings</mat-icon> &nbsp;
+                <mat-slide-toggle labelPosition="before" (change)="toggleTheme($event)" class="cssswitch">
+                   <a class="style"> {{ isDarkMode ? 'Dark Mode' : 'Light Mode' }} </a>
+                </mat-slide-toggle>
+            </div>
+            </mat-list-item>
+
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content><router-outlet>
+    </router-outlet></mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,51 @@
+.example-container {
+    width: auto;
+    height: 100vh;
+  }
+
+  ::ng-deep .mat-mdc-slide-toggle.mat-mdc-slide-toggle-checked:not(.mat-disabled) .mdc-switch__shadow {
+    background-color: #3eb6b4;
+  
+  }
+  
+  ::ng-deep .mat-mdc-slide-toggle.mat-mdc-slide-toggle-checked:not(.mat-disabled) .mdc-switch__track::after {
+    background-color: #7b72ac !important;
+    
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  .contenitore{
+    display: flex;            
+    align-items: center;   
+
+  }
+
+  .page_item.selected .page_name,
+  .page_item.selected .page_icon{
+    color:#7b72ac;
+  }
+ 
+  /*.page_name.active,
+  .page_icon.active{
+    color:#7b72ac;
+  }*/
+
+ 
+  .admin{
+    color:#7b72ac;
+  }
+
+  .page_icon {
+    color: #3eb6b4;
+  }
+
+  .page_name{
+    color: #47a9c2;
+  }
+
+  .style{
+    color: #3eb6b4;
+  }

@@ -1,0 +1,19 @@
+@import url("https://code.highcharts.com/css/highcharts.css");
+
+.model{
+    padding-left: 7%;
+    padding-top: 2%;
+    font-size: 18px;
+}
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar{
+    --mdc-tab-indicator-active-indicator-color: #3eb6b4;
+}
+
+.mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color: #7b72ac;
+}
+
+.mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
+    color: #d6cfff;
+}

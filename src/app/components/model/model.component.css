@@ -1,0 +1,109 @@
+
+body{
+    display: flex;
+}
+
+
+.model{
+    padding-left: 7%;
+    padding-top: 2%;
+    font-size: 18px;
+}
+
+.model_name{
+    position: absolute;
+    left: 8%;
+    top: 12%;
+    font-size: 16px;
+}
+
+.model_info{
+    position: absolute;
+    left: 40%;
+    top: 12%;
+    font-size: 16px;
+}
+
+.model_base{
+    position: absolute;
+    left: 75%;
+    top: 12%;
+    font-size: 16px;
+}
+
+.name{
+    position: absolute;
+    left: 8%;
+    top: 17%;
+    font-size: 14px;
+}
+
+.info_1{
+    position: absolute;
+    left: 40%;
+    top: 17%;
+    font-size: 14px;
+}
+
+.info_2{
+    position: absolute;
+    left: 40%;
+    top: 22%;
+    font-size: 14px;
+}
+
+.base_1{
+    position: absolute;
+    left: 75%;
+    top: 17%;
+    font-size: 14px;
+}
+
+.base_2{
+    position: absolute;
+    left: 75%;
+    top: 22%;
+    font-size: 14px;
+}
+
+.base_3{
+    position: absolute;
+    left: 75%;
+    top: 27%;
+    font-size: 14px;
+}
+
+.model_full{
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    font-size: 16px;
+}
+
+.full_1{
+    position: absolute;
+    left: 40%;
+    top: 45%;
+    font-size: 14px;
+}
+
+.full_2{
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    font-size: 14px;
+}
+
+.full_3{
+    position: absolute;
+    left: 40%;
+    top: 55%;
+    font-size: 14px;
+}
+
+.full_4{
+    position: absolute;
+    left: 40%;
+    top: 60%;
+    font-size: 14px;
+}

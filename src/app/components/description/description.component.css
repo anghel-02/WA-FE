@@ -1,0 +1,109 @@
+@import url("https://code.highcharts.com/css/highcharts.css");
+
+.model{
+    padding-left: 7%;
+    padding-top: 2%;
+    font-size: 18px;
+}
+
+.bs{
+    position:absolute;
+    left: 16%;
+    top: 14%;
+    font-size: 16px;
+}
+
+.co{
+    position:absolute;
+    left: 16%;
+    top: 26%;
+    font-size: 16px;
+}
+
+.gr{
+    position:absolute;
+    left: 16%;
+    top: 38%;
+    font-size: 16px;
+}
+
+.lm{
+    position:absolute;
+    left: 16%;
+    top:50%;
+    font-size: 16px;
+}
+
+.ma{
+    position:absolute;
+    left: 16%;
+    bottom:32%;
+    font-size: 16px;
+}
+
+.qu{
+    position:absolute;
+    left: 16%;
+    bottom:20%;
+    font-size: 16px;
+}
+
+.sd{
+    position:absolute;
+    left: 16%;
+    bottom:8%;
+    font-size: 16px;
+}
+
+.bsdesc{
+    padding-left: 38%;
+    padding-top: 2%;
+    height: 70px;
+    width: 500px;
+}
+
+.codesc{
+    padding-left: 38%;
+    height: 70px;
+    width: 500px;
+}
+
+.grdesc{
+    padding-left: 38%;
+    margin-top: 1%;
+    height: 70px;
+    width: 500px;
+}
+
+.lmdesc{
+    padding-left: 38%;
+    margin-top: 1%;
+    height: 70px;
+    width: 500px;
+}
+
+.madesc{
+    padding-left: 38%;
+    margin-top: 1%;
+    height: 70px;
+    width: 500px;
+}
+
+.qudesc{
+    padding-left: 38%;
+    height: 70px;
+    width: 500px;
+}
+
+.sddesc{
+    padding-left: 38%;
+    margin-top: 1%;
+    height: 70px;
+    width: 500px;
+}
+
+.btn {
+    right: -5%;
+    margin-bottom: -6%;
+}
+
