@@ -59,6 +59,7 @@ export class AnalyticsModelComponent{
       {
         color: '#7b72ac',
         type: 'line',
+        name: 'Accuracy',
         data: [0.15, 0.3, 0.31, 0.35, 0.41, 0.47, 0.48, 0.52, 0.55, 0.57, 0.61, 0.67, 0.68, 0.75, 0.69, 0.79, 0.81, 0.84, 0.88, 0.87]
       }
     ],
@@ -115,6 +116,7 @@ export class AnalyticsModelComponent{
       {
         color: '#7b72ac',
         type: 'line',
+        name: 'Loss',
         data: [1.39, 1.22, 1.20, 1.09, 1.08, 1.05, 0.95, 0.98, 0.84, 0.82, 0.79, 0.83, 0.70, 0.60, 0.63, 0.50, 0.53, 0.38, 0.36, 0.39]
       }
     ],

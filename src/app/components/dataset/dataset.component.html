@@ -1,18 +1,28 @@
 <p class="model"><b>Dataset</b>
 
 
-<highcharts-chart
-    [Highcharts]="Highcharts" 
-    [options]="chartOptions1"
-    style="width: 450px; height: 300px; display: block; margin-top: 1%; margin-left: 23%;">
-</highcharts-chart>
+    
+    <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center" style="transform: translate(-40px, 300px);">
+        <mat-tab label="Basalt">Content 1 </mat-tab>
+        <mat-tab label="Coal">Content 2</mat-tab>
+        <mat-tab label="Granite">Content 3</mat-tab>
+        <mat-tab label="Limestone">Content 4</mat-tab>
+        <mat-tab label="Marble">Content 5</mat-tab>
+        <mat-tab label="Quartzite">Content 6</mat-tab>
+        <mat-tab label="Sandstone">Content 7</mat-tab>
+    </mat-tab-group>
+    
 
-<mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center" style="margin-right: 10%;">
-    <mat-tab label="Basalt">Content 1 adahdoashfoshfsdòfs</mat-tab>
-    <mat-tab label="Coal">Content 2</mat-tab>
-    <mat-tab label="Granite">Content 3</mat-tab>
-    <mat-tab label="Limestone">Content 3</mat-tab>
-    <mat-tab label="Marble">Content 3</mat-tab>
-    <mat-tab label="Quartzite">Content 3</mat-tab>
-    <mat-tab label="Sandstone">Content 3</mat-tab>
-  </mat-tab-group>
+    <div *ngIf="chartOptions1">
+        <highcharts-chart
+            [Highcharts]="Highcharts" 
+            [options]="chartOptions1"
+            style="width: 450px; height: 300px; display: block; transform: translate(300px, -70px);">
+        </highcharts-chart>
+    </div>
+
+ 
+
+
+
+

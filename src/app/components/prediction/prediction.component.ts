@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, forwardRef, Inject,OnInit,ViewEncapsulation } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-prediction',
@@ -6,6 +7,27 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./prediction.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class PredictionComponent {
+export class PredictionComponent implements OnInit{
+
+  totpred : any [] = [];
+  
+
+  constructor (private auth : AuthService){}
+
+  ngOnInit(): void {
+
+    this.auth.getpredtot().subscribe(data =>{
+      this.totpred= data;
+      console.log(this.totpred)
+      
+    })
+    
+  }
+
+  
+  
+  
+  
+
 
 }

@@ -1,12 +1,197 @@
 <p class="model"><b>Prediction Menagement</b>
 
     <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center" style="margin-right: 10%; margin-top: 4%;">
-        <mat-tab label="Basalt">Content 1 adahdoashfoshfsdòfs</mat-tab>
-        <mat-tab label="Coal">Content 2</mat-tab>
-        <mat-tab label="Granite">Content 3</mat-tab>
-        <mat-tab label="Limestone">Content 3</mat-tab>
-        <mat-tab label="Marble">Content 3</mat-tab>
-        <mat-tab label="Quartzite">Content 3</mat-tab>
-        <mat-tab label="Sandstone">Content 3</mat-tab>
-        <mat-tab label="All">Content 3</mat-tab>
+
+      
+        <mat-tab label="Basalt">
+          <br>
+          <div class="card-container">
+            <div *ngFor="let pred of totpred">
+              <div *ngIf="pred.label === 'Basalt' ">
+          <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Id: {{pred.id}}</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+            <p>Label: {{pred.label}}</p>
+          </mat-card-content>
+          <br>
+          <mat-card-footer>
+            <p class="date">{{pred.createTime}}</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+      </mat-tab>
+    
+
+        <mat-tab label="Coal">
+          <br>
+          <div class="card-container">
+            <div *ngFor="let pred of totpred">
+              <div *ngIf="pred.label === 'Coal' ">
+          <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Id: {{pred.id}}</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+            <p>Label: {{pred.label}}</p>
+          </mat-card-content>
+          <br>
+          <mat-card-footer>
+            <p class="date">{{pred.createTime}}</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+        </mat-tab>
+
+        <mat-tab label="Granite">
+          <br>
+          <div class="card-container">
+            <div *ngFor="let pred of totpred">
+              <div *ngIf="pred.label === 'Granite' ">
+          <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Id: {{pred.id}}</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+            <p>Label: {{pred.label}}</p>
+          </mat-card-content>
+          <br>
+          <mat-card-footer>
+            <p class="date">{{pred.createTime}}</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+        </mat-tab>
+
+        <mat-tab label="Limestone">
+          <br>
+          <div class="card-container">
+            <div *ngFor="let pred of totpred">
+              <div *ngIf="pred.label === 'Limestone' ">
+          <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Id: {{pred.id}}</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+            <p>Label: {{pred.label}}</p>
+          </mat-card-content>
+          <br>
+          <mat-card-footer>
+            <p class="date">{{pred.createTime}}</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+        </mat-tab>
+
+        <mat-tab label="Marble">
+          <br>
+          <div class="card-container">
+            <div *ngFor="let pred of totpred">
+              <div *ngIf="pred.label === 'Marble' ">
+          <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Id: {{pred.id}}</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+            <p>Label: {{pred.label}}</p>
+          </mat-card-content>
+          <br>
+          <mat-card-footer>
+            <p class="date">{{pred.createTime}}</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+        </mat-tab>
+
+        <mat-tab label="Quartzite">
+          <br>
+          <div class="card-container">
+            <div *ngFor="let pred of totpred">
+              <div *ngIf="pred.label === 'Quartzite' ">
+          <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Id: {{pred.id}}</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+            <p>Label: {{pred.label}}</p>
+          </mat-card-content>
+          <br>
+          <mat-card-footer>
+            <p class="date">{{pred.createTime}}</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+        </mat-tab>
+
+        <mat-tab label="Sandstone">
+          <br>
+          <div class="card-container">
+            <div *ngFor="let pred of totpred">
+              <div *ngIf="pred.label === 'Sandstone' ">
+          <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Id: {{pred.id}}</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+            <p>Label: {{pred.label}}</p>
+          </mat-card-content>
+          <br>
+          <mat-card-footer>
+            <p class="date">{{pred.createTime}}</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+        </mat-tab>
+
+        <mat-tab label="All">
+          <br>
+          <div class="card-container">
+            <div *ngFor="let pred of totpred">
+          <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Id: {{pred.id}}</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+            <p>Label: {{pred.label}}</p>
+          </mat-card-content>
+          <br>
+          <mat-card-footer>
+            <p class="date">{{pred.createTime}}</p>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+  </div>
+        </mat-tab>
+
       </mat-tab-group>

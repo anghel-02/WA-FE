@@ -1,5 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, forwardRef, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { AuthService } from 'src/app/auth.service';
 
 
 @Component({
@@ -8,10 +9,41 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./dataset.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class DatasetComponent {
-  Highcharts: typeof Highcharts = Highcharts;
+export class DatasetComponent implements OnInit{
 
-  chartOptions1: Highcharts.Options = {
+  num : number[] = [];
+  rocks: string[] = ['basalt', 'coal', 'granite', 'limestone', 'marble', 'quartzite', 'sandstone'];
+  numtot! :string;
+  Highcharts = Highcharts;
+  chartOptions1: any;
+  
+
+  constructor (@Inject(forwardRef(() => AuthService)) private auth : AuthService){}
+
+
+  ngOnInit(): void {
+    
+    for(let r of this.rocks){
+      this.auth.getTotImg(r).subscribe(data =>{
+        this.num.push(data);
+        if(this.num.length>6){this.updatechart();}
+        
+      })
+
+    }
+
+  this.auth.getnumImg().subscribe(data =>{
+    const numtotint : number = data;
+    this.numtot = numtotint.toString();
+    this.updatechart();
+  
+  })
+    
+  }
+
+  updatechart() : void {
+
+ this.chartOptions1 = {
     chart: {
       type: 'column'
   },
@@ -22,7 +54,7 @@ export class DatasetComponent {
     }
   },
   subtitle: {
-      text:'3000 photo',
+      text: this.numtot,
       style: {
         color: '#3eb6b4',
     }
@@ -58,8 +90,8 @@ export class DatasetComponent {
       {
           color: '#7b72ac',
           type: 'column',
-          name: 'Corn',
-          data: [200, 350, 400,350, 500, 450, 480]
+          name: 'Photo',
+          data: this.num,
       },
   ],
   legend:{
@@ -68,5 +100,7 @@ export class DatasetComponent {
   credits: {
     enabled: false 
   }};
+
+}
 
 }

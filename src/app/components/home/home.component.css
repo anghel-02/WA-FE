@@ -65,3 +65,38 @@
     top: 11%;
     bottom: 0px;
   }
+
+  .pred_label{
+    position:absolute;
+    left: 74%;
+    bottom: 33%;
+    font-size: 16px;
+  }
+
+  .card-container{
+    display: flex;
+    position: absolute;
+    bottom: 4.5%;
+    right: 7%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    
+}
+
+.date{
+    text-align: center;
+}
+
+
+.mat-mdc-card-title{
+    color: #7b72ac;
+}
+
+.mat-mdc-card-content{
+    color: #7b72ac;
+}
+
+.mat-mdc-card-footer{
+    color: #7b72ac;
+}

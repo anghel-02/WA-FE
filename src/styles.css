@@ -66,6 +66,9 @@ body.dark-mode #desc_page .mdc-text-field:not(.mdc-text-field--disabled) .mdc-fl
     color: #3eb6b4;
 }
 
+body.dark-mode .mat-mdc-card {
+    --mdc-elevated-card-container-color: rgb(48, 46, 46);
+}
 
 /* Light mode*/
 
@@ -94,4 +97,7 @@ body {
     color: black;
 }
 
+.mat-mdc-card {
+    --mdc-elevated-card-container-color: #9de6e4;
+}
 

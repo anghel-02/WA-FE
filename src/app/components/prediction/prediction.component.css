@@ -17,3 +17,28 @@
 .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
     color: #d6cfff;
 }
+
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.date{
+    text-align: center;
+}
+
+
+.mat-mdc-card-title{
+    color: #7b72ac;
+}
+
+.mat-mdc-card-content{
+    color: #7b72ac;
+}
+
+.mat-mdc-card-footer{
+    color: #7b72ac;
+}

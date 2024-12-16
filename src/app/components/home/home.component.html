@@ -3,11 +3,13 @@
 
 <p class="model"><b>Dashboard</b>
 
+<div *ngIf="chartOptions1">
 <highcharts-chart
     [Highcharts]="Highcharts" 
     [options]="chartOptions1"
-    style="width: 400px; height: 300px; display: block; margin-top: 2%; margin-left: 2%;">
+    style="width: 400px; height: 300px; display: block; margin-top: 2%; margin-left: 9%;">
 </highcharts-chart>
+</div>
 
 <hr>
 
@@ -29,6 +31,30 @@
     [options]="chartOptions2"
     style="width: 400px; height: 300px; display: block; top: 10%; right: 5%; position: absolute">
   </highcharts-chart>
+
+
+  <div class="predict">
+    <p class="pred_label"><b>Prediction</b></p>
+    <div class="card-container">
+      <div *ngFor="let pred of pred.slice(0,2)">
+    <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Id: {{pred.id}}</mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+      <p>Confidence: {{pred.confidence | number: '1.2-2'}} %</p>
+      <p>Label: {{pred.label}}</p>
+    </mat-card-content>
+    <br>
+    <mat-card-footer>
+      <p class="date">{{pred.createTime}}</p>
+    </mat-card-footer>
+  </mat-card>
+</div>
+</div>
+
+  </div>
 
 
 

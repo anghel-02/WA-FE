@@ -18,42 +18,45 @@
 <p class="sd"><b>Sandstone</b></p>
 
 
+<form #descform="ngForm" (ngSubmit)="onSubmit(descform)">
 
     <mat-form-field class="bsdesc">
         <mat-label>Description</mat-label>
-        <input matInput required ngModel>
+        <input matInput name="bsdesc" required ngModel [(ngModel)]="desc[0]">
       </mat-form-field>
       
       <mat-form-field class="codesc">
         <mat-label>Description</mat-label>
-        <input matInput required ngModel>
+        <input matInput name="codesc" required ngModel [(ngModel)]="desc[1]">
       </mat-form-field>
       
       <mat-form-field class="grdesc">
         <mat-label>Description</mat-label>
-        <input matInput required ngModel>
+        <input matInput name="grdesc" required ngModel [(ngModel)]="desc[2]">
       </mat-form-field>
       
       <mat-form-field class="lmdesc">
         <mat-label>Description</mat-label>
-        <input matInput required ngModel>
+        <input matInput name="lmdesc" required ngModel [(ngModel)]="desc[3]">
       </mat-form-field>
       
       <mat-form-field class="madesc">
         <mat-label>Description</mat-label>
-        <input matInput required ngModel>
+        <input matInput name="madesc" required ngModel [(ngModel)]="desc[4]">
       </mat-form-field>
       
       <mat-form-field class="qudesc">
         <mat-label>Description</mat-label>
-        <input matInput required ngModel>
+        <input matInput name="qudesc" required ngModel [(ngModel)]="desc[5]">
       </mat-form-field>
    
       <mat-form-field class="sddesc">
         <mat-label>Description</mat-label>
-        <input matInput required ngModel>
+        <input matInput name="sddesc" required ngModel [(ngModel)]="desc[6]">
       </mat-form-field>
 
-      <button class="btn" mat-raised-button>Save</button>
+      <button class="btn" type="submit" mat-raised-button>Save</button>
+
+    </form>
 
 </div>
