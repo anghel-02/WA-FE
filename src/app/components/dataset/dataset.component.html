@@ -1,26 +1,87 @@
 <p class="model"><b>Dataset</b>
 
 
-    
-    <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center" style="transform: translate(-40px, 300px);">
-        <mat-tab label="Basalt">Content 1 </mat-tab>
-        <mat-tab label="Coal">Content 2</mat-tab>
-        <mat-tab label="Granite">Content 3</mat-tab>
-        <mat-tab label="Limestone">Content 4</mat-tab>
-        <mat-tab label="Marble">Content 5</mat-tab>
-        <mat-tab label="Quartzite">Content 6</mat-tab>
-        <mat-tab label="Sandstone">Content 7</mat-tab>
-    </mat-tab-group>
-    
+    <div class= "cont">
 
-    <div *ngIf="chartOptions1">
-        <highcharts-chart
-            [Highcharts]="Highcharts" 
-            [options]="chartOptions1"
-            style="width: 450px; height: 300px; display: block; transform: translate(300px, -70px);">
-        </highcharts-chart>
+        <div class = "charts" *ngIf="chartOptions1">
+            <highcharts-chart
+                [Highcharts]="Highcharts" 
+                [options]="chartOptions1"
+                style="width: 450px; height: 300px; display: flex;">
+            </highcharts-chart>
+        </div>
+    
+        <div  class= "tab">
+    <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center">
+
+        <mat-tab label="Basalt">
+            <br>
+            <div class="card-container">
+        <input type="file" (change)="onFileSelected($event,0)" accept="image/*" #fileInput0 style="display: none;">
+        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput0.click()">
+        <img class="photo" *ngIf="imgUrl[0]" [src]="imgUrl[0]" alt = "add">
     </div>
+    </mat-tab>
 
+        <mat-tab label="Coal">
+            <br>
+            <div class="card-container">
+        <input type="file" (change)="onFileSelected($event,1)" accept="image/*" #fileInput1 style="display: none;">
+        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput1.click()">
+        <img class="photo" *ngIf="imgUrl[1]" [src]="imgUrl[1]" alt = "add">
+    </div>        
+</mat-tab>
+
+        <mat-tab label="Granite">
+            <br>
+            <div class="card-container">
+        <input type="file" (change)="onFileSelected($event,1)" accept="image/*" #fileInput2 style="display: none;">
+        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput2.click()">
+        <img class="photo" *ngIf="imgUrl[2]" [src]="imgUrl[2]" alt = "add">
+    </div>          
+</mat-tab>
+
+        <mat-tab label="Limestone">
+            <br>
+            <div class="card-container">
+        <input type="file" (change)="onFileSelected($event,3)" accept="image/*" #fileInput3 style="display: none;">
+        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput3.click()">
+        <img class="photo" *ngIf="imgUrl[3]" [src]="imgUrl[3]" alt = "add">
+    </div>          
+</mat-tab>
+
+        <mat-tab label="Marble">
+            <br>
+            <div class="card-container">
+        <input type="file" (change)="onFileSelected($event,4)" accept="image/*" #fileInput4 style="display: none;">
+        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput4.click()">
+        <img class="photo" *ngIf="imgUrl[4]" [src]="imgUrl[4]" alt = "add">
+    </div>  
+        </mat-tab>
+
+        <mat-tab label="Quartzite">
+            <br>
+            <div class="card-container">
+        <input type="file" (change)="onFileSelected($event,5)" accept="image/*" #fileInput5 style="display: none;">
+        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput5.click()">
+        <img class="photo" *ngIf="imgUrl[5]" [src]="imgUrl[5]" alt = "add">
+    </div>          
+</mat-tab>
+
+        <mat-tab label="Sandstone">
+            <br>
+            <div class="card-container">
+        <input type="file" (change)="onFileSelected($event,6)" accept="image/*" #fileInput6 style="display: none;">
+        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput6.click()">
+        <img class="photo" *ngIf="imgUrl[6]" [src]="imgUrl[6]" alt = "add">
+    </div>          
+</mat-tab>
+
+    </mat-tab-group>
+</div>
+
+
+</div>
  
 
 

@@ -18,3 +18,30 @@
 .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
     color: #d6cfff;
 }
+
+.mat-mdc-card-image{
+    width: 100px;
+    height: 100px;
+}
+
+
+.cont{
+    display: flexbox;
+}
+
+
+.charts{
+    padding-top: 1%;
+    padding-left: 25%;
+    
+}
+
+.photo{
+    width: 100px;
+    height: 100px;
+}
+
+.card-container{
+    display: flex;
+    gap: 16px;
+}

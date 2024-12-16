@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Description } from './description';
+import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,10 @@ export class AuthService {
 
     updatedesc(body: Description[]) {
       this.http.post<any>(this.url + "updateDesc", body).subscribe(response => {});
+    }
+
+    addimg(formData : {}){
+      this.http.post<any>(this.url + "saveImage", formData).subscribe(response =>{});
     }
 
 }

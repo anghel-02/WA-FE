@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/auth.service';
 export class DatasetComponent implements OnInit{
 
   num : number[] = [];
-  rocks: string[] = ['basalt', 'coal', 'granite', 'limestone', 'marble', 'quartzite', 'sandstone'];
+  rocks: string[] = ['Basalt', 'Coal', 'Granite', 'Limestone', 'Marble', 'Quartzite', 'Sandstone'];
   numtot! :string;
   Highcharts = Highcharts;
   chartOptions1: any;
@@ -102,5 +102,32 @@ export class DatasetComponent implements OnInit{
   }};
 
 }
+
+img! : ArrayBuffer;
+imgUrl: string[] = [];
+
+onFileSelected(event: any, tabIndex: number): void {
+  const file: File = event.target.files[0];
+  if (file){
+    const reader = new FileReader();
+    reader.onload = (e:any) =>{
+      this.img = e.target.result;
+      this.imgUrl[tabIndex] = 'data:image/jpg;base64,' + btoa(String.fromCharCode(...new Uint8Array(this.img))); 
+      const classe = this.rocks[tabIndex];
+      this.uploadimg(classe,file);
+    };
+    reader.readAsArrayBuffer(file);
+    }
+
+    
+  }
+
+
+  uploadimg(classe : string, file : File){
+    const formData = new FormData();
+    formData.append('classe', classe);  
+    formData.append('file', file);
+    this.auth.addimg(formData)   
+  }
 
 }
