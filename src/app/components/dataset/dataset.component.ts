@@ -3,6 +3,7 @@ import * as Highcharts from 'highcharts';
 import { AuthService } from 'src/app/auth.service';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { PageEvent } from '@angular/material/paginator';
+import { Colors } from 'chart.js';
 
 
 @Component({
@@ -135,7 +136,7 @@ updatechart() : void {
       categories: ['Basalt', 'Coal', 'Granite', 'Limestone', 'Marble', 'Quartzite', 'Sandstone'],
       crosshair: true,
       accessibility: {
-          description: 'Countries'
+          description: 'Class'
         },
 
     },

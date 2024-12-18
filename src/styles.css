@@ -29,7 +29,7 @@ body.dark-mode #model_page p{
 }
 
 body.dark-mode .highcharts-background{
-    fill:black;
+    fill: black!important;
 }
 
 body.dark-mode .model{
@@ -79,6 +79,10 @@ body.dark-mode .mat-mdc-paginator{
 
 body {
     background-color: white;
+}
+
+.highcharts-background{
+    fill: white!important;
 }
 
 .mat-drawer-container {
