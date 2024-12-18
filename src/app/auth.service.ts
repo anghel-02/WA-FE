@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Description } from './description';
 import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
@@ -13,9 +13,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-    getDesc(rockname: string): Observable<any> {
-        return this.http.get<any>(`${this.url}description/${rockname}`, { responseType: 'text'  as 'json' })
-      }
     
     getTotImg(rockname: string): Observable<any> {
       return this.http.get<any>(`${this.url}totalimages/${rockname}`)
@@ -35,6 +32,13 @@ export class AuthService {
 
     addimg(formData : {}){
       this.http.post<any>(this.url + "saveImage", formData).subscribe(response =>{});
+    }
+
+    getphoto(classe : string, pageNumber : number): Observable<any>{
+      const params = new HttpParams()
+      .set('pageNumber',pageNumber.toString())
+      
+      return this.http.get<any>(`${this.url}images/${classe}`, { params })
     }
 
 }

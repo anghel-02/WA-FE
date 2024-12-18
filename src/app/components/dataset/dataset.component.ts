@@ -1,6 +1,8 @@
 import { Component, forwardRef, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { AuthService } from 'src/app/auth.service';
+import { MatTabChangeEvent } from '@angular/material/tabs';
+import { PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -16,6 +18,12 @@ export class DatasetComponent implements OnInit{
   numtot! :string;
   Highcharts = Highcharts;
   chartOptions1: any;
+  nome : any [] = [];
+  foto : any [] = [];
+  paginatedImages: string[] = [];
+  pageSize: number = 8;
+  pageIndex: number = 0;
+ 
   
 
   constructor (@Inject(forwardRef(() => AuthService)) private auth : AuthService){}
@@ -23,13 +31,18 @@ export class DatasetComponent implements OnInit{
 
   ngOnInit(): void {
     
-    for(let r of this.rocks){
-      this.auth.getTotImg(r).subscribe(data =>{
-        this.num.push(data);
-        if(this.num.length>6){this.updatechart();}
-        
-      })
+    let responses = new Array(this.rocks.length);
 
+    for (let index = 0; index < this.rocks.length; index++) {
+      let rock = this.rocks[index];
+      this.auth.getTotImg(rock).subscribe(data => {
+        responses[index] = data;
+        if (responses.filter(response => response !== undefined).length === this.rocks.length) {
+          this.num = responses;
+          this.updatechart();
+          console.log(this.num);
+        }
+      });
     }
 
   this.auth.getnumImg().subscribe(data =>{
@@ -38,10 +51,64 @@ export class DatasetComponent implements OnInit{
     this.updatechart();
   
   })
+
+  this.auth.getTotImg("Basalt").subscribe(data =>{
+    this.num.push(data);
+    this.takephoto("Basalt",0);
+  })
+
+
+  }
+
+
+  takephoto(tabName: string, ind : number){
+    this.foto = [];
+    this.paginatedImages = [];
+    const nume = Math.ceil(this.num[ind]/20);
+    for(let i=0; i<nume; i++){
+      this.auth.getphoto(tabName,i).subscribe(data =>{
+        for (let img of data.content){
+          this.foto.push(this.image(img.imageData));
+          this.nome.push(img.name);
+        }
+        if(i==nume-1){console.log(this.foto.length)}
+        this.updatePaginatedImages();
+        })
+      }
+  
+  }
+
+  onTabChange(event: MatTabChangeEvent) {
+      this.auth.getTotImg(event.tab.textLabel).subscribe(data =>{
+        this.num.push(data);
+        this.takephoto(event.tab.textLabel,event.index);
+      })
     
   }
 
-  updatechart() : void {
+  
+  image(base64: string): string {
+    const imageUrl = 'data:image/jpg;base64,' + base64;
+    return imageUrl;
+  }
+
+
+  onPageChange(event: PageEvent){
+    this.pageSize = event.pageSize;
+    this.pageIndex = event.pageIndex;
+    console.log(this.pageIndex);
+    console.log(this.pageIndex);
+    this.updatePaginatedImages();
+  }
+
+  updatePaginatedImages() {
+    const startIndex = this.pageIndex * this.pageSize;
+    this.paginatedImages = this.foto.slice(startIndex, startIndex + this.pageSize);
+  }
+
+
+
+updatechart() : void {
 
  this.chartOptions1 = {
     chart: {

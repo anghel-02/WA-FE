@@ -1,89 +1,242 @@
-<p class="model"><b>Dataset</b>
+<p class="model"><b>Dataset</b></p>
 
+<div class="cont">
+  <div class="charts" *ngIf="chartOptions1">
+    <highcharts-chart
+      [Highcharts]="Highcharts"
+      [options]="chartOptions1"
+      style="width: 450px; height: 300px; display: flex"
+    >
+    </highcharts-chart>
+  </div>
 
-    <div class= "cont">
+  <div class="tab">
+    <mat-tab-group
+      dynamicHeight
+      mat-stretch-tabs="false"
+      mat-align-tabs="center"
+      (selectedTabChange)="onTabChange($event)"
+    >
+      <mat-tab label="Basalt">
+        <br />
+        <div class="card-container">
+          
+            <input
+              type="file"
+              (change)="onFileSelected($event, 0)"
+              accept="image/*"
+              #fileInput0
+              style="display: none"/>
 
-        <div class = "charts" *ngIf="chartOptions1">
-            <highcharts-chart
-                [Highcharts]="Highcharts" 
-                [options]="chartOptions1"
-                style="width: 450px; height: 300px; display: flex;">
-            </highcharts-chart>
+            <img
+              mat-card-image
+              src="assets\img\plus.webp"
+              alt="add"
+              style="padding-left: 2%"
+              (click)="fileInput0.click()"/>
+
+            <div *ngIf="pageIndex==0">
+            <img class="photo" *ngIf="imgUrl[0]" [src]="imgUrl[0]" alt="add" />
+            </div>
+
+            <div *ngFor="let image of paginatedImages">
+            <img mat-card-image [src]="image" alt=""/>
+            </div>
+
+            <mat-paginator [length]="foto.length"
+               pageSize="8"
+               (page)="onPageChange($event)">
+            </mat-paginator>
+          
         </div>
-    
-        <div  class= "tab">
-    <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center">
+      </mat-tab>
 
-        <mat-tab label="Basalt">
-            <br>
-            <div class="card-container">
-        <input type="file" (change)="onFileSelected($event,0)" accept="image/*" #fileInput0 style="display: none;">
-        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput0.click()">
-        <img class="photo" *ngIf="imgUrl[0]" [src]="imgUrl[0]" alt = "add">
-    </div>
-    </mat-tab>
+      <mat-tab label="Coal">
+        <br />
+        <div class="card-container">
+          <input
+            type="file"
+            (change)="onFileSelected($event, 1)"
+            accept="image/*"
+            #fileInput1
+            style="display: none"
+          />
+          <img
+            mat-card-image
+            src="assets\img\plus.webp"
+            alt="add"
+            style="padding-left: 2%"
+            (click)="fileInput1.click()"
+          />
+          <img class="photo" *ngIf="imgUrl[1]" [src]="imgUrl[1]" alt="add" />
 
-        <mat-tab label="Coal">
-            <br>
-            <div class="card-container">
-        <input type="file" (change)="onFileSelected($event,1)" accept="image/*" #fileInput1 style="display: none;">
-        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput1.click()">
-        <img class="photo" *ngIf="imgUrl[1]" [src]="imgUrl[1]" alt = "add">
-    </div>        
-</mat-tab>
+          <div *ngFor="let image of paginatedImages">
+            <img mat-card-image [src]="image" alt=""/>
+            </div>
 
-        <mat-tab label="Granite">
-            <br>
-            <div class="card-container">
-        <input type="file" (change)="onFileSelected($event,1)" accept="image/*" #fileInput2 style="display: none;">
-        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput2.click()">
-        <img class="photo" *ngIf="imgUrl[2]" [src]="imgUrl[2]" alt = "add">
-    </div>          
-</mat-tab>
+            <mat-paginator [length]="foto.length"
+               pageSize="8"
+               (page)="onPageChange($event)">
+            </mat-paginator>
 
-        <mat-tab label="Limestone">
-            <br>
-            <div class="card-container">
-        <input type="file" (change)="onFileSelected($event,3)" accept="image/*" #fileInput3 style="display: none;">
-        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput3.click()">
-        <img class="photo" *ngIf="imgUrl[3]" [src]="imgUrl[3]" alt = "add">
-    </div>          
-</mat-tab>
+        </div>
+      </mat-tab>
 
-        <mat-tab label="Marble">
-            <br>
-            <div class="card-container">
-        <input type="file" (change)="onFileSelected($event,4)" accept="image/*" #fileInput4 style="display: none;">
-        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput4.click()">
-        <img class="photo" *ngIf="imgUrl[4]" [src]="imgUrl[4]" alt = "add">
-    </div>  
-        </mat-tab>
+      <mat-tab label="Granite">
+        <br />
+        <div class="card-container">
+          <input
+            type="file"
+            (change)="onFileSelected($event, 2)"
+            accept="image/*"
+            #fileInput2
+            style="display: none"
+          />
+          <img
+            mat-card-image
+            src="assets\img\plus.webp"
+            alt="add"
+            style="padding-left: 2%"
+            (click)="fileInput2.click()"
+          />
+          <img class="photo" *ngIf="imgUrl[2]" [src]="imgUrl[2]" alt="add" />
 
-        <mat-tab label="Quartzite">
-            <br>
-            <div class="card-container">
-        <input type="file" (change)="onFileSelected($event,5)" accept="image/*" #fileInput5 style="display: none;">
-        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput5.click()">
-        <img class="photo" *ngIf="imgUrl[5]" [src]="imgUrl[5]" alt = "add">
-    </div>          
-</mat-tab>
+          <div *ngFor="let image of paginatedImages">
+            <img mat-card-image [src]="image" alt=""/>
+            </div>
 
-        <mat-tab label="Sandstone">
-            <br>
-            <div class="card-container">
-        <input type="file" (change)="onFileSelected($event,6)" accept="image/*" #fileInput6 style="display: none;">
-        <img mat-card-image src="assets\img\plus.webp" alt = "add" style="padding-left:2%;" (click)="fileInput6.click()">
-        <img class="photo" *ngIf="imgUrl[6]" [src]="imgUrl[6]" alt = "add">
-    </div>          
-</mat-tab>
+            <mat-paginator [length]="foto.length"
+               pageSize="8"
+               (page)="onPageChange($event)">
+            </mat-paginator>
 
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Limestone">
+        <br />
+        <div class="card-container">
+          <input
+            type="file"
+            (change)="onFileSelected($event, 3)"
+            accept="image/*"
+            #fileInput3
+            style="display: none"
+          />
+          <img
+            mat-card-image
+            src="assets\img\plus.webp"
+            alt="add"
+            style="padding-left: 2%"
+            (click)="fileInput3.click()"
+          />
+          <img class="photo" *ngIf="imgUrl[3]" [src]="imgUrl[3]" alt="add" />
+
+          <div *ngFor="let image of paginatedImages">
+            <img mat-card-image [src]="image" alt=""/>
+            </div>
+
+            <mat-paginator [length]="foto.length"
+               pageSize="8"
+               (page)="onPageChange($event)">
+            </mat-paginator>
+
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Marble">
+        <br />
+        <div class="card-container">
+          <input
+            type="file"
+            (change)="onFileSelected($event, 4)"
+            accept="image/*"
+            #fileInput4
+            style="display: none"
+          />
+          <img
+            mat-card-image
+            src="assets\img\plus.webp"
+            alt="add"
+            style="padding-left: 2%"
+            (click)="fileInput4.click()"
+          />
+          <img class="photo" *ngIf="imgUrl[4]" [src]="imgUrl[4]" alt="add" />
+
+          <div *ngFor="let image of paginatedImages">
+            <img mat-card-image [src]="image" alt=""/>
+            </div>
+
+            <mat-paginator [length]="foto.length"
+               pageSize="8"
+               (page)="onPageChange($event)">
+            </mat-paginator>
+
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Quartzite">
+        <br />
+        <div class="card-container">
+          <input
+            type="file"
+            (change)="onFileSelected($event, 5)"
+            accept="image/*"
+            #fileInput5
+            style="display: none"
+          />
+          <img
+            mat-card-image
+            src="assets\img\plus.webp"
+            alt="add"
+            style="padding-left: 2%"
+            (click)="fileInput5.click()"
+          />
+          <img class="photo" *ngIf="imgUrl[5]" [src]="imgUrl[5]" alt="add" />
+
+          <div *ngFor="let image of paginatedImages">
+            <img mat-card-image [src]="image" alt=""/>
+            </div>
+
+            <mat-paginator [length]="foto.length"
+               pageSize="8"
+               (page)="onPageChange($event)">
+            </mat-paginator>
+
+
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Sandstone">
+        <br />
+        <div class="card-container">
+          <input
+            type="file"
+            (change)="onFileSelected($event, 6)"
+            accept="image/*"
+            #fileInput6
+            style="display: none"
+          />
+          <img
+            mat-card-image
+            src="assets\img\plus.webp"
+            alt="add"
+            style="padding-left: 2%"
+            (click)="fileInput6.click()"
+          />
+          <img class="photo" *ngIf="imgUrl[6]" [src]="imgUrl[6]" alt="add" />
+
+          <div *ngFor="let image of paginatedImages">
+            <img mat-card-image [src]="image" alt=""/>
+            </div>
+
+            <mat-paginator [length]="foto.length"
+               pageSize="8"
+               (page)="onPageChange($event)">
+            </mat-paginator>
+
+        </div>
+      </mat-tab>
     </mat-tab-group>
+  </div>
 </div>
-
-
-</div>
- 
-
-
-
-

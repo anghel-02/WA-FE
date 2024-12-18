@@ -21,12 +21,6 @@ constructor(@Inject(forwardRef(() => AuthService)) private auth: AuthService){}
 
 ngOnInit(): void {
 
-  for(let r of this.rocks){
-    this.auth.getDesc(r).subscribe(data =>{
-      this.desc.push(data);
-    })
-  }
-  
 }
 
 onSubmit(form: NgForm){
