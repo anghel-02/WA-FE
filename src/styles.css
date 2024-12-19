@@ -92,20 +92,20 @@ body {
 .highcharts-crosshair,
 .highcharts-crosshair-category,
 .highcharts-tracker{
-    fill: white!important;
+    fill: white;
 }
 
 .mat-drawer-container {
-    background-color: white!important;
+    background-color: white;
 }
 
 .drawer{
-    background-color: rgba(240, 240, 240, 0.986)!important;
+    background-color: rgba(240, 240, 240, 0.986);
 }
 
 .page_item.active,
 .page_item:hover{
-    background-color: #d6cfff!important;
+    background-color: #d6cfff;
 }
 
 #model_page p{
@@ -117,6 +117,6 @@ body {
 }
 
 .mat-mdc-card {
-    --mdc-elevated-card-container-color: #9de6e4!important;
+    --mdc-elevated-card-container-color: #9de6e4;
 }
 
