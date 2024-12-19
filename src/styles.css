@@ -82,20 +82,30 @@ body {
 }
 
 .highcharts-background{
+    fill : white!important;
+}
+
+.highcharts-markers,
+.highcharts-column-series,
+.highcharts-series-hover,
+.highcharts-point-hover,
+.highcharts-crosshair,
+.highcharts-crosshair-category,
+.highcharts-tracker{
     fill: white!important;
 }
 
 .mat-drawer-container {
-    background-color: white;
+    background-color: white!important;
 }
 
 .drawer{
-    background-color: rgba(240, 240, 240, 0.986);
+    background-color: rgba(240, 240, 240, 0.986)!important;
 }
 
 .page_item.active,
 .page_item:hover{
-    background-color: #d6cfff;
+    background-color: #d6cfff!important;
 }
 
 #model_page p{
@@ -107,6 +117,6 @@ body {
 }
 
 .mat-mdc-card {
-    --mdc-elevated-card-container-color: #9de6e4;
+    --mdc-elevated-card-container-color: #9de6e4!important;
 }
 

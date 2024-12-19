@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit{
     
   }
 
-   updatechart() : void {
+  updatechart() : void {
 
     this.chartOptions1 = {
       chart: {
@@ -84,7 +84,15 @@ export class HomeComponent implements OnInit{
                 color: '#3eb6b4',
             }
           }
-      },series: 
+      },
+      tooltip: {
+        backgroundColor: '#FFFFFF', // Colore di sfondo del tooltip
+        style: {
+          color: '#FFFFFFFF' // Colore del testo all'interno del tooltip
+        },
+        borderColor: '#7b72ac', // Bordo del tooltip
+      },
+      series: 
       [
         {
             color: '#7b72ac',
@@ -99,8 +107,8 @@ export class HomeComponent implements OnInit{
     credits: {
       enabled: false 
     }};
-  
-  }
+}
+
 
   chartOptions2: Highcharts.Options = {
     chart: {
@@ -141,6 +149,13 @@ export class HomeComponent implements OnInit{
       min: 0,
       max: 1,
       tickInterval: 0.1
+    },
+    tooltip: {
+      backgroundColor: '#FFFFFF', // Colore di sfondo del tooltip
+      style: {
+        color: '#FFFFFFFF' // Colore del testo all'interno del tooltip
+      },
+      borderColor: '#7b72ac', // Bordo del tooltip
     },
     series: [
       {

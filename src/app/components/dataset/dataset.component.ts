@@ -153,8 +153,15 @@ updatechart() : void {
               color: '#3eb6b4',
           }
         }
-    },series: 
-    [
+    },
+    tooltip: {
+      backgroundColor: '#FFFFFF', // Colore di sfondo del tooltip
+      style: {
+        color: '#FFFFFFFF' // Colore del testo all'interno del tooltip
+      },
+      borderColor: '#7b72ac', // Bordo del tooltip
+    },
+    series:[
       {
           color: '#7b72ac',
           type: 'column',

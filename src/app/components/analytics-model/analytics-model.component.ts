@@ -55,6 +55,13 @@ export class AnalyticsModelComponent{
       max: 1,
       tickInterval: 0.1
     },
+    tooltip: {
+      backgroundColor: '#FFFFFF', // Colore di sfondo del tooltip
+      style: {
+        color: '#FFFFFFFF' // Colore del testo all'interno del tooltip
+      },
+      borderColor: '#7b72ac', // Bordo del tooltip
+    },
     series: [
       {
         color: '#7b72ac',
@@ -111,6 +118,13 @@ export class AnalyticsModelComponent{
       min: 0,
       max: 1.4,
       tickInterval: 0.2 
+    },
+    tooltip: {
+      backgroundColor: '#FFFFFF', // Colore di sfondo del tooltip
+      style: {
+        color: '#FFFFFFFF' // Colore del testo all'interno del tooltip
+      },
+      borderColor: '#7b72ac', // Bordo del tooltip
     },
     series: [
       {
