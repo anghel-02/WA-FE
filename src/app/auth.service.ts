@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
 import { Description } from './description';
-import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +23,22 @@ export class AuthService {
 
     getpredtot(): Observable<any>{
       return this.http.get<any>(`${this.url}predictions`)
+    }
+
+    getTotalConfidence(): Observable<number> {
+      return this.http.get<number>(`${this.url}predictions/totalconfidence`).pipe(
+        map((response: number) => {
+          // Verifica che la risposta sia un numero valido
+          if (!isNaN(response)) {
+            return response;
+          }
+          throw new Error('La risposta non è un numero valido.');
+        }),
+        catchError((error) => {
+          console.error('Errore durante la richiesta:', error);
+          throw error; // Propaga l'errore
+        })
+      );
     }
 
     updatedesc(body: Description[]) {
