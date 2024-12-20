@@ -3,6 +3,7 @@ import * as Highcharts from 'highcharts';
 import { AuthService } from 'src/app/auth.service';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { PageEvent } from '@angular/material/paginator';
+import { Colors } from 'chart.js';
 
 
 @Component({
@@ -135,7 +136,7 @@ updatechart() : void {
       categories: ['Basalt', 'Coal', 'Granite', 'Limestone', 'Marble', 'Quartzite', 'Sandstone'],
       crosshair: true,
       accessibility: {
-          description: 'Countries'
+          description: 'Class'
         },
 
     },
@@ -152,8 +153,15 @@ updatechart() : void {
               color: '#3eb6b4',
           }
         }
-    },series: 
-    [
+    },
+    tooltip: {
+      backgroundColor: '#FFFFFF', // Colore di sfondo del tooltip
+      style: {
+        color: '#FFFFFFFF' // Colore del testo all'interno del tooltip
+      },
+      borderColor: '#7b72ac', // Bordo del tooltip
+    },
+    series:[
       {
           color: '#7b72ac',
           type: 'column',

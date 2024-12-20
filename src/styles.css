@@ -29,7 +29,7 @@ body.dark-mode #model_page p{
 }
 
 body.dark-mode .highcharts-background{
-    fill:black;
+    fill: black!important;
 }
 
 body.dark-mode .model{
@@ -92,6 +92,20 @@ body.dark-mode textarea{
 
 body {
     background-color: white;
+}
+
+.highcharts-background{
+    fill : white!important;
+}
+
+.highcharts-markers,
+.highcharts-column-series,
+.highcharts-series-hover,
+.highcharts-point-hover,
+.highcharts-crosshair,
+.highcharts-crosshair-category,
+.highcharts-tracker{
+    fill: white;
 }
 
 .mat-drawer-container {
