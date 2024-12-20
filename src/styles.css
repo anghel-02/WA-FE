@@ -50,21 +50,12 @@ body.dark-mode #desc_page p{
 
 body.dark-mode .btn {
     background-color:rgb(48, 46, 46);
-    --mdc-protected-button-label-text-color: white;
-
 }
 
-body.dark-mode #desc_page  .mdc-text-field__input{
-    color:white;
+body.dark-mode .mat-mdc-outlined-button:not(:disabled) {
+    color: white;
 }
 
-body.dark-mode #desc_page .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-    background-color: rgb(48, 46, 46);
-}
-
-body.dark-mode #desc_page .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
-    color: #3eb6b4;
-}
 
 body.dark-mode .mat-mdc-card {
     --mdc-elevated-card-container-color: rgb(48, 46, 46);
@@ -74,6 +65,28 @@ body.dark-mode .mat-mdc-paginator{
     background: black;
     color: white;
 }
+
+body.dark-mode .mat-mdc-select-value {
+    color: white;
+}
+
+body.dark-mode .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: rgb(48, 46, 46);
+}
+
+body.dark-mode .mat-mdc-option {
+    color: white;
+}
+
+body.dark-mode .cdk-overlay-pane:not(.mat-mdc-select-panel-above) .mdc-menu-surface.mat-mdc-select-panel {
+    background: rgb(48, 46, 46);
+}
+
+body.dark-mode textarea{
+    background-color: rgb(48, 46, 46);
+    color:white;
+}
+
 
 /* Light mode*/
 

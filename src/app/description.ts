@@ -1,6 +1,6 @@
 
 
-export interface Description {
+export interface DescriptionDTO {
     rockname : string;
-    description : string;
+    text : string;
 }

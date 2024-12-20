@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Description } from './description';
-import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
+import { DescriptionDTO} from './description';
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +26,11 @@ export class AuthService {
       return this.http.get<any>(`${this.url}predictions`)
     }
 
-    updatedesc(body: Description[]) {
-      this.http.post<any>(this.url + "updateDesc", body).subscribe(response => {});
+    updatedesc(rockname : string, text : string): Observable<any> {
+      let params = new HttpParams()
+      .set('rockname', rockname)
+      .set('text', text);
+      return this.http.post<any>(this.url + "updateDesc", params);
     }
 
     addimg(formData : {}){
@@ -37,7 +40,6 @@ export class AuthService {
     getphoto(classe : string, pageNumber : number): Observable<any>{
       const params = new HttpParams()
       .set('pageNumber',pageNumber.toString())
-      
       return this.http.get<any>(`${this.url}images/${classe}`, { params })
     }
 

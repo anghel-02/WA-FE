@@ -2,61 +2,27 @@
 
 <p class="model"><b>Modify Description</b>
 
+<div class="mff">
+  <mat-form-field>
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected" required ngModel>
+      <mat-option>None</mat-option>
+      <mat-option value="Basalt">Basalt</mat-option>
+      <mat-option value="Coal">Coal</mat-option>
+      <mat-option value="Granite">Granite</mat-option>
+      <mat-option value="Limestone">Limestone</mat-option>
+      <mat-option value="Marble">Marble</mat-option>
+      <mat-option value="Quartzite">Quartzite</mat-option>
+      <mat-option value="Sandstone">Sandstone</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
-<p class="bs"><b>Basalt</b></p> 
-  
-<p class="co"><b>Coal</b></p>
+<div class="text-area">
+ <textarea [(ngModel)]="editorData" required ngModel></textarea>
+</div>
 
-<p class="gr"><b>Granite</b></p>
+<button class="btn" mat-stroked-button (click)="onSubmit()">Save</button>
 
-<p class="lm"><b>Limestone</b></p>
-
-<p class="ma"><b>Marble</b></p>
-
-<p class="qu"><b>Quartzite</b></p>
-
-<p class="sd"><b>Sandstone</b></p>
-
-
-<form #descform="ngForm" (ngSubmit)="onSubmit(descform)">
-
-    <mat-form-field class="bsdesc">
-        <mat-label>Description</mat-label>
-        <input matInput name="bsdesc" required ngModel [(ngModel)]="desc[0]">
-      </mat-form-field>
-      
-      <mat-form-field class="codesc">
-        <mat-label>Description</mat-label>
-        <input matInput name="codesc" required ngModel [(ngModel)]="desc[1]">
-      </mat-form-field>
-      
-      <mat-form-field class="grdesc">
-        <mat-label>Description</mat-label>
-        <input matInput name="grdesc" required ngModel [(ngModel)]="desc[2]">
-      </mat-form-field>
-      
-      <mat-form-field class="lmdesc">
-        <mat-label>Description</mat-label>
-        <input matInput name="lmdesc" required ngModel [(ngModel)]="desc[3]">
-      </mat-form-field>
-      
-      <mat-form-field class="madesc">
-        <mat-label>Description</mat-label>
-        <input matInput name="madesc" required ngModel [(ngModel)]="desc[4]">
-      </mat-form-field>
-      
-      <mat-form-field class="qudesc">
-        <mat-label>Description</mat-label>
-        <input matInput name="qudesc" required ngModel [(ngModel)]="desc[5]">
-      </mat-form-field>
-   
-      <mat-form-field class="sddesc">
-        <mat-label>Description</mat-label>
-        <input matInput name="sddesc" required ngModel [(ngModel)]="desc[6]">
-      </mat-form-field>
-
-      <button class="btn" type="submit" mat-raised-button>Save</button>
-
-    </form>
 
 </div>

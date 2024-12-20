@@ -25,8 +25,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { CKEditorModule } from 'ckeditor4-angular';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     AnalyticsModelComponent,
     DescriptionComponent,
     PredictionComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
