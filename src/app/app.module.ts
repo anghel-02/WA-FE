@@ -28,7 +28,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
 
 import { HighchartsChartModule } from 'highcharts-angular';
-import { CKEditorModule } from 'ckeditor4-angular';
 
 
 @NgModule({
@@ -62,8 +61,7 @@ import { CKEditorModule } from 'ckeditor4-angular';
     HttpClientModule,
     MatCardModule,
     MatPaginatorModule,
-    MatSelectModule,
-    CKEditorModule
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
