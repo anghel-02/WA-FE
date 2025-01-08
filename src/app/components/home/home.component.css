@@ -29,6 +29,7 @@
 }
 
 .grid-container {
+    padding-left: 25px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 50%;
