@@ -38,6 +38,7 @@
 .grid-item {
     border: 1px solid #ccc;
     padding: 1px;
+    height: 70px;
 }
 
 .vl {
