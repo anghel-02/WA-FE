@@ -3,6 +3,7 @@ import * as Highcharts from 'highcharts';
 import { AuthService } from 'src/app/auth.service';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { PageEvent } from '@angular/material/paginator';
+import { style } from '@angular/animations';
 
 
 
@@ -152,6 +153,13 @@ updatechart() : void {
               color: '#3eb6b4',
           }
         }
+    },
+    tooltip: {
+      backgroundColor: '#FFFFFF', // Colore di sfondo del tooltip
+      style: {
+        color: '#FFFFFFFF' // Colore del testo all'interno del tooltip
+      },
+      borderColor: '#7b72ac', // Bordo del tooltip
     },
     series:[
       {
