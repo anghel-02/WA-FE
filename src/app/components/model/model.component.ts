@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/auth.service';
   templateUrl: './model.component.html',
   styleUrls: ['./model.component.css']
 })
+<<<<<<< HEAD
 export class ModelComponent implements OnInit {
 
 
@@ -13,5 +14,9 @@ export class ModelComponent implements OnInit {
   }
   
 
+=======
+export class ModelComponent{
+  
+>>>>>>> 26f25f608f6a86eebf6be03118ee8c12070d3628
   
 }

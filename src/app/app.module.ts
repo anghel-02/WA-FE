@@ -26,8 +26,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+
+
 
 
 @NgModule({
@@ -61,7 +65,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HttpClientModule,
     MatCardModule,
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
+    ToastrModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
