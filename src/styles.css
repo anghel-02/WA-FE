@@ -88,25 +88,17 @@ body.dark-mode textarea{
 }
 
 
+body.dark-mode .mat-mdc-paginator-icon {
+	fill: white!important;
+}
+
+
 /* Light mode*/
 
 body {
     background-color: white;
 }
 
-.highcharts-background{
-    fill : white!important;
-}
-
-.highcharts-markers,
-.highcharts-column-series,
-.highcharts-series-hover,
-.highcharts-point-hover,
-.highcharts-crosshair,
-.highcharts-crosshair-category,
-.highcharts-tracker{
-    fill: white;
-}
 
 .mat-drawer-container {
     background-color: white;
@@ -133,3 +125,6 @@ body {
     --mdc-elevated-card-container-color: #9de6e4;
 }
 
+.mat-mdc-paginator-icon {
+	fill: grey!important;
+}

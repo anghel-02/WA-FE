@@ -19,11 +19,6 @@
     color: #d6cfff;
 }
 
-.mat-mdc-card-image{
-    width: 100px;
-    height: 100px;
-}
-
 
 .cont{
     display: flexbox;
@@ -36,12 +31,9 @@
     
 }
 
-.photo{
-    width: 100px;
-    height: 100px;
-}
 
 .card-container{
+    position: relative;
     display: flex;
     gap: 16px;
 }
@@ -53,6 +45,29 @@ mat-paginator {
     left: 0;
     width: 100%;
     z-index: 1000;
+    height: 40px;
   }
 
+
+  .mdc-card__media{
+    padding-left: 10px;
+    box-sizing: unset !important;
+    width: 100px;
+    height: 100px;
+}
+
+.piu{
+    padding-left:15px !important;
+}
   
+.photo{
+    padding-left: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+  /* .del{
+    height: 30px;
+    width: 30px;
+    
+  } */

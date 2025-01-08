@@ -1,16 +1,16 @@
-import { Component, forwardRef, Inject, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, forwardRef, Inject, OnInit, ViewEncapsulation} from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { AuthService } from 'src/app/auth.service';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { PageEvent } from '@angular/material/paginator';
-import { Colors } from 'chart.js';
+
 
 
 @Component({
   selector: 'app-dataset',
   templateUrl: './dataset.component.html',
   styleUrls: ['./dataset.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class DatasetComponent implements OnInit{
 
@@ -22,7 +22,7 @@ export class DatasetComponent implements OnInit{
   nome : any [] = [];
   foto : any [] = [];
   paginatedImages: string[] = [];
-  pageSize: number = 8;
+  pageSize: number = 7;
   pageIndex: number = 0;
  
   
@@ -41,7 +41,6 @@ export class DatasetComponent implements OnInit{
         if (responses.filter(response => response !== undefined).length === this.rocks.length) {
           this.num = responses;
           this.updatechart();
-          console.log(this.num);
         }
       });
     }
@@ -72,11 +71,11 @@ export class DatasetComponent implements OnInit{
           this.foto.push(this.image(img.imageData));
           this.nome.push(img.name);
         }
-        if(i==nume-1){console.log(this.foto.length)}
+        // if(i==nume-1){console.log(this.foto.length)}
         this.updatePaginatedImages();
         })
       }
-  
+      console.log(this.nome)
   }
 
   onTabChange(event: MatTabChangeEvent) {
@@ -153,13 +152,6 @@ updatechart() : void {
               color: '#3eb6b4',
           }
         }
-    },
-    tooltip: {
-      backgroundColor: '#FFFFFF', // Colore di sfondo del tooltip
-      style: {
-        color: '#FFFFFFFF' // Colore del testo all'interno del tooltip
-      },
-      borderColor: '#7b72ac', // Bordo del tooltip
     },
     series:[
       {
