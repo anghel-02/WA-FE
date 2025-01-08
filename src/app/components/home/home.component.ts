@@ -9,8 +9,9 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class HomeComponent implements OnInit{
   num : number[] = [];
-  rocks: string[] = ['basalt', 'coal', 'granite', 'limestone', 'marble', 'quartzite', 'sandstone'];
+  rocks: string[] = ['Basalt', 'Coal', 'Granite', 'Limestone', 'Marble', 'Quartzite', 'Sandstone'];
   pred : any[] = [];
+  confidenceMap = new Map();
   numtot! :string;
   Highcharts = Highcharts;
   chartOptions1: any;
@@ -25,18 +26,27 @@ export class HomeComponent implements OnInit{
         if(this.num.length>6){this.updatechart();}
         
       })
-
     }
 
-  this.auth.getnumImg().subscribe(data =>{
-    const numtotint : number = data;
-    this.numtot = numtotint.toString();
-    this.updatechart();
-  })
+    this.auth.getnumImg().subscribe(data =>{
+      const numtotint : number = data;
+      this.numtot = numtotint.toString();
+      this.updatechart();
+    })
 
-  this.auth.getpredtot().subscribe(data =>{
-    this.pred = data;
-  })
+    this.auth.getpredtot().subscribe(data =>{
+      this.pred = data;
+    })
+
+    for(let r of this.rocks){
+      this.auth.getConfidenceByLabel(r).subscribe(data =>{
+        this.confidenceMap.set(r,data);
+        console.log("data" + data)
+      })
+    }
+    this.auth.getTotalConfidence().subscribe(data =>{
+      this.confidenceMap.set("Total",data);
+    })
     
   }
 

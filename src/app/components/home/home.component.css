@@ -1,20 +1,20 @@
 @import url("https://code.highcharts.com/css/highcharts.css");
 
 .model{
-    padding-left: 7%;
+    padding-left: 20%;
     padding-top: 2%;
     font-size: 18px;
 }
 
 
-.model_home{
-    padding-left: 23%;
+.acc{
+    padding-left: 20%;
     padding-top: 1%;
     font-size: 16px;
 }
 
 .name{
-    position:absolute;
+    left: 20%;
     padding-left: 11%;
     padding-top: 2%;
     font-size: 14px;
@@ -28,32 +28,16 @@
     font-size: 13px;
 }
 
-.imgsize{
-    position:absolute;
-    padding-left: 11%;
-    padding-top: 1%;
-    font-size: 14px;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+    gap: 2px;
 }
-
-.imgsizel{
-    position: inline-block;
-    padding-left: 19%;
-    padding-top: 1%;
-    font-size: 13px;
-}
-
-.batchs{
-    position:absolute;
-    padding-left: 11%;
-    padding-top: 1%;
-    font-size: 14px;
-}
-
-.batchsl{
-    position: inline-block;
-    padding-left: 19%;
-    padding-top: 1%;
-    font-size: 13px;
+  
+.grid-item {
+    border: 1px solid #ccc;
+    padding: 1px;
 }
 
 .vl {
@@ -68,15 +52,15 @@
 
   .pred_label{
     position:absolute;
-    left: 74%;
-    bottom: 33%;
+    left: 75%;
+    bottom: 43%;
     font-size: 16px;
   }
 
   .card-container{
     display: flex;
     position: absolute;
-    bottom: 4.5%;
+    bottom: 10%;
     right: 7%;
     flex-direction: row;
     flex-wrap: wrap;

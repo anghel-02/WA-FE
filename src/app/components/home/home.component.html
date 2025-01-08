@@ -13,20 +13,46 @@
 
 <hr>
 
-<p class="model_home"><b>Model data</b></p>
+<p class="acc"><b>Accuracy Scores</b></p>
 
-<p class="name"><b>Name:</b></p>
-<p class="namel">CNN1test1.keras</p>
-
-<p class="imgsize"><b>Image Size:</b></p>
-<p class="imgsizel">(299, 299)</p>
-
-<p class="batchs"><b>Batch Size:</b></p>
-<p class="batchsl">128</p>
+<div class="grid-container">
+  <div class="grid-item">
+    <p class="name"><b>Basalt :</b></p>
+    <p class="namel">{{confidenceMap.get("Basalt")}}%</p>
+  </div>
+  <div class="grid-item">
+    <p class="name"><b>Coal :</b></p>
+    <p class="namel">{{confidenceMap.get("Coal")}}%</p>
+  </div>
+  <div class="grid-item">
+    <p class="name"><b>Granite :</b></p>
+    <p class="namel">{{confidenceMap.get("Granite")}}%</p>
+  </div>
+  <div class="grid-item">
+    <p class="name"><b>Limestone :</b></p>
+    <p class="namel">{{confidenceMap.get("Limestone")}}%</p>
+  </div>
+  <div class="grid-item">
+    <p class="name"><b>Marble :</b></p>
+    <p class="namel">{{confidenceMap.get("Marble")}}%</p>
+  </div>
+  <div class="grid-item">
+    <p class="name"><b>Quartzite :</b></p>
+    <p class="namel">{{confidenceMap.get("Quartzite")}}%</p>
+  </div>
+  <div class="grid-item">
+    <p class="name"><b>Sandstone :</b></p>
+    <p class="namel">{{confidenceMap.get("Sandstone")}}%</p>
+  </div>
+  <div class="grid-item">
+    <p class="name"><b>Totale :</b></p>
+    <p class="namel">{{confidenceMap.get("Total")}}%</p>
+  </div>
+</div>
 
 <div class="vl"></div>
 
-<highcharts-chart>
+<highcharts-chart
     [Highcharts]="Highcharts" 
     [options]="chartOptions2"
     style="width: 400px; height: 300px; display: block; top: 10%; right: 5%; position: absolute">

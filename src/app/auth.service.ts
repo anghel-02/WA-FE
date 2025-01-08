@@ -57,4 +57,8 @@ export class AuthService {
       return this.http.get<any>(`${this.url}images/${classe}`, { params })
     }
 
+    getConfidenceByLabel(label : string): Observable<any> {
+      return this.http.get<any>(`${this.url}predictions/totalconfidence/${label}`);
+    }
+
 }
