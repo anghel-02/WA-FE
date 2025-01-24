@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation  } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation  } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
-
+import { Editor } from 'ngx-editor';
 
 @Component({
   selector: 'app-description',
@@ -9,15 +9,20 @@ import { AuthService } from 'src/app/auth.service';
   encapsulation: ViewEncapsulation.None
 })
 
-export class DescriptionComponent{
+export class DescriptionComponent implements OnDestroy {
 
 selected: string = ""
 editorData : string = "";
-
+editor: Editor = new Editor();
 successMessage: string | null = null;
 errorMessage: string | null = null;
+html: any;
 
 constructor(private auth  : AuthService){}
+
+  ngOnDestroy(): void {
+    this.editor.destroy();
+  }
   
 
 onSubmit(): void{

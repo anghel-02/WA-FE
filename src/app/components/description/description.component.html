@@ -18,9 +18,13 @@
   </mat-form-field>
 </div>
 
+
 <div class="text-area">
+  <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+  <ngx-editor [editor]="editor" formControlName="editorContent">
+  </ngx-editor>
   <textarea [(ngModel)]="editorData" required ngModel></textarea>
- </div>
+</div>
 
 <button class="btn" mat-stroked-button (click)="onSubmit()">Save</button>
 

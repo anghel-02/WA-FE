@@ -27,7 +27,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {NgxEditorModule} from 'ngx-editor';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 
@@ -66,7 +66,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatCardModule,
     MatPaginatorModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
